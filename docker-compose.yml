@@ -18,6 +18,13 @@ services:
     hostname: cluster-master
     tty: true
     working_dir: /app
+    # Add memory limits here
+    deploy:
+      resources:
+        limits:
+          memory: 10g # Adjust as needed
+        reservations:
+          memory: 5g # Optional: Guarantee at least this much
     # You can comment the entrypoint to run the script manually inside the container
     entrypoint: 
       - bash
